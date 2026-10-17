@@ -51,6 +51,13 @@
     .credential a { color: var(--accent); text-decoration: underline; }
     .credential-title { font-weight: 700; }
     .tagline { color: var(--muted); font-size: 9.3pt; }
+    .lang { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+    .lang-item { display: inline-flex; align-items: center; gap: 6px; }
+    .flag {
+      width: 1.3em; height: auto; flex: none;
+      border: 1px solid rgba(0, 0, 0, .18); border-radius: 2px;
+      vertical-align: -0.2em;
+    }
     @media (max-width: 640px) {
       .page { margin: 0; padding: 26px 22px; box-shadow: none; }
       h1 { font-size: 24pt; }
@@ -220,7 +227,39 @@
 
     <section>
       <h2>Languages</h2>
-      <p>Portuguese — Native | English — Elementary</p>
+      <div class="lang">
+        <span class="lang-item">
+          <svg class="flag" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Brazil flag">
+            <rect width="20" height="14" fill="#009B3A"/>
+            <polygon points="10,1.4 18.6,7 10,12.6 1.4,7" fill="#FEDD00"/>
+            <circle cx="10" cy="7" r="3.4" fill="#002776"/>
+            <path d="M6.7,7.7 Q10,5.3 13.3,7.7" fill="none" stroke="#fff" stroke-width="0.75"/>
+          </svg>
+          Portuguese — Native
+        </span>
+        <span class="lang-item">
+          <svg class="flag" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="United States flag">
+            <rect width="20" height="14" fill="#B22234"/>
+            <g fill="#fff">
+              <rect y="1.08" width="20" height="1.08"/>
+              <rect y="3.23" width="20" height="1.08"/>
+              <rect y="5.38" width="20" height="1.08"/>
+              <rect y="7.54" width="20" height="1.08"/>
+              <rect y="9.69" width="20" height="1.08"/>
+              <rect y="11.85" width="20" height="1.08"/>
+            </g>
+            <rect width="8" height="7.54" fill="#3C3B6E"/>
+            <g fill="#fff">
+              <circle cx="1.4" cy="1.2" r="0.3"/><circle cx="3.2" cy="1.2" r="0.3"/><circle cx="5" cy="1.2" r="0.3"/><circle cx="6.8" cy="1.2" r="0.3"/>
+              <circle cx="2.3" cy="2.4" r="0.3"/><circle cx="4.1" cy="2.4" r="0.3"/><circle cx="5.9" cy="2.4" r="0.3"/>
+              <circle cx="1.4" cy="3.6" r="0.3"/><circle cx="3.2" cy="3.6" r="0.3"/><circle cx="5" cy="3.6" r="0.3"/><circle cx="6.8" cy="3.6" r="0.3"/>
+              <circle cx="2.3" cy="4.8" r="0.3"/><circle cx="4.1" cy="4.8" r="0.3"/><circle cx="5.9" cy="4.8" r="0.3"/>
+              <circle cx="1.4" cy="6" r="0.3"/><circle cx="3.2" cy="6" r="0.3"/><circle cx="5" cy="6" r="0.3"/><circle cx="6.8" cy="6" r="0.3"/>
+            </g>
+          </svg>
+          English — Elementary
+        </span>
+      </div>
     </section>
 
   </main>
