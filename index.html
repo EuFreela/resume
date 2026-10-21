@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Lameck Silva Fernandes — Software Engineer specializing in PHP, Laravel, Python, FastAPI, distributed systems, and AI-assisted software development.">
-  <title>Lameck Silva Fernandes | Software Engineer — Backend & AI-Assisted Development</title>
+  <meta name="description" id="meta-desc" data-pt="Lameck Silva Fernandes — Engenheiro de Software especializado em PHP, Laravel, Python, FastAPI, sistemas distribuídos e desenvolvimento de software com auxílio de IA." data-en="Lameck Silva Fernandes — Software Engineer specializing in PHP, Laravel, Python, FastAPI, distributed systems, and AI-assisted software development.">
+  <title id="page-title" data-pt="Lameck Silva Fernandes | Engenheiro de Software — Backend & Desenvolvimento com IA" data-en="Lameck Silva Fernandes | Software Engineer — Backend & AI-Assisted Development">Lameck Silva Fernandes | Software Engineer — Backend & AI-Assisted Development</title>
   <style>
     :root {
       --ink: #18212b;
@@ -29,7 +29,7 @@
       background: var(--paper);
       box-shadow: 0 4px 24px rgba(20, 35, 50, .10);
     }
-    header { border-bottom: 2px solid var(--accent); padding-bottom: 18px; margin-bottom: 22px; }
+    header { border-bottom: 2px solid var(--accent); padding-bottom: 18px; margin-bottom: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
     h1 { margin: 0; font-size: 28pt; letter-spacing: -.6px; line-height: 1.15; }
     .headline { margin-top: 7px; color: var(--accent); font-size: 13pt; font-weight: 700; }
     .contact { display: flex; flex-wrap: wrap; gap: 5px 16px; margin-top: 12px; color: var(--muted); font-size: 9.5pt; }
@@ -48,6 +48,42 @@
     .skill-label { font-weight: 700; }
     .note { color: var(--muted); font-size: 9pt; }
     .credential { margin: 0 0 8px; break-inside: avoid; }
+
+    /* Seletor de idioma */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-left: auto;
+      font-size: 8.5pt;
+      color: var(--muted);
+    }
+    .lang-switch label {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      transition: all .15s;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .lang-switch label:hover { border-color: var(--accent); }
+    .lang-switch input { display: none; }
+    .lang-switch input:checked + label {
+      border-color: var(--accent);
+      background: var(--soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .lang-switch .flag {
+      width: 1.2em; height: auto; flex: none;
+      border: 1px solid rgba(0,0,0,.25); border-radius: 2px;
+      vertical-align: -0.15em;
+    }
     .credential a { color: var(--accent); text-decoration: underline; }
     .credential-title { font-weight: 700; }
     .tagline { color: var(--muted); font-size: 9.3pt; }
@@ -81,18 +117,53 @@
   <main class="page">
     <header>
       <h1>Lameck Silva Fernandes</h1>
-      <div class="headline">Software Engineer | Software Architecture, Security &amp; AI Engineering</div>
+      <div class="headline" id="headline" data-pt="Engenheiro de Software | Arquitetura de Software, Segurança &amp; Engenharia de IA" data-en="Software Engineer | Software Architecture, Security &amp; AI Engineering">Software Engineer | Software Architecture, Security &amp; AI Engineering</div>
       <div class="contact">
-        <span>Brazil</span>
+        <span id="loc-brazil" data-pt="Brazil" data-en="Brazil">Brazil</span>
         <a href="mailto:curriculo@lameck.33mail.com">curriculo@lameck.33mail.com</a>
         <a href="https://www.linkedin.com/in/lameck-silva-fernandes-76026260">LinkedIn</a>
         <a href="https://linktr.ee/lameckfernandes">Portfolio &amp; Links</a>
       </div>
+      <div class="lang-switch">
+        <input type="radio" name="lang" id="lang-pt" checked onchange="setLang('pt')">
+        <label for="lang-pt" title="Português">
+          <svg class="flag" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Brazil flag">
+            <rect width="20" height="14" fill="#009B3A"/>
+            <polygon points="10,1.4 18.6,7 10,12.6 1.4,7" fill="#FEDD00"/>
+            <circle cx="10" cy="7" r="3.4" fill="#002776"/>
+            <path d="M6.7,7.7 Q10,5.3 13.3,7.7" fill="none" stroke="#fff" stroke-width="0.75"/>
+          </svg>
+          PT
+        </label>
+        <input type="radio" name="lang" id="lang-en" onchange="setLang('en')">
+        <label for="lang-en" title="English">
+          <svg class="flag" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="United States flag">
+            <rect width="20" height="14" fill="#B22234"/>
+            <g fill="#fff">
+              <rect y="1.08" width="20" height="1.08"/>
+              <rect y="3.23" width="20" height="1.08"/>
+              <rect y="5.38" width="20" height="1.08"/>
+              <rect y="7.54" width="20" height="1.08"/>
+              <rect y="9.69" width="20" height="1.08"/>
+              <rect y="11.85" width="20" height="1.08"/>
+            </g>
+            <rect width="8" height="7.54" fill="#3C3B6E"/>
+            <g fill="#fff">
+              <circle cx="1.4" cy="1.2" r="0.3"/><circle cx="3.2" cy="1.2" r="0.3"/><circle cx="5" cy="1.2" r="0.3"/><circle cx="6.8" cy="1.2" r="0.3"/>
+              <circle cx="2.3" cy="2.4" r="0.3"/><circle cx="4.1" cy="2.4" r="0.3"/><circle cx="5.9" cy="2.4" r="0.3"/>
+              <circle cx="1.4" cy="3.6" r="0.3"/><circle cx="3.2" cy="3.6" r="0.3"/><circle cx="5" cy="3.6" r="0.3"/><circle cx="6.8" cy="3.6" r="0.3"/>
+              <circle cx="2.3" cy="4.8" r="0.3"/><circle cx="4.1" cy="4.8" r="0.3"/><circle cx="5.9" cy="4.8" r="0.3"/>
+              <circle cx="1.4" cy="6" r="0.3"/><circle cx="3.2" cy="6" r="0.3"/><circle cx="5" cy="6" r="0.3"/><circle cx="6.8" cy="6" r="0.3"/>
+            </g>
+          </svg>
+          EN
+        </label>
+      </div>
     </header>
 
     <section>
-      <h2>Professional Summary</h2>
-      <p>
+      <h2 data-pt="Resumo Profissional" data-en="Professional Summary">Professional Summary</h2>
+      <p data-pt="Engenheiro de Software com vasta experiência em desenvolvimento de backend, integração de sistemas e entrega de soluções de software personalizadas. Experiente em PHP, Laravel, Python, FastAPI, APIs REST e arquiteturas API-first. Na <strong>omni-electronica</strong>, contribuiu para o desenvolvimento e evolução da <strong>AMI-Hub</strong>, uma plataforma de edifícios inteligentes e gestão de instalações, trabalhando com arquiteturas distribuídas, autenticação centralizada via OAuth 2.0, mensageria assíncrona, containerização e infraestrutura em nuvem." data-en="Software Engineer with extensive experience in backend development, systems integration, and delivering custom software solutions. Experienced in PHP, Laravel, Python, FastAPI, REST APIs, and API-first architectures. At <strong>omni-electronica</strong>, contributed to the development and evolution of <strong>AMI-Hub</strong>, a smart-building and facilities management platform, working with distributed architectures, centralized authentication through OAuth 2.0, asynchronous messaging, containerization, and cloud infrastructure.">
         Software Engineer with extensive experience in backend development, systems integration,
         and delivering custom software solutions. Experienced in PHP, Laravel, Python, FastAPI,
         REST APIs, and API-first architectures. At <strong>omni-electronica</strong>, contributed to
@@ -100,7 +171,7 @@
         management platform, working with distributed architectures, centralized authentication
         through OAuth 2.0, asynchronous messaging, containerization, and cloud infrastructure.
       </p>
-      <p>
+      <p data-pt="Baseado nessa formação em engenharia de software, estou expandindo minha expertise em <strong>Engenharia de IA, IA generativa e desenvolvimento de software com auxílio de IA</strong>, com foco em grandes modelos de linguagem (LLMs), agentes de IA, prompt engineering, processamento de linguagem natural (NLP), geração aumentada por recuperação (RAG), extração de informação e aplicações de IA generativa. Meu objetivo é combinar práticas sólidas de engenharia — arquitetura, segurança, testes, manutenibilidade e confiabilidade — com capacidades de IA para apoiar implementação, análise, documentação, testes e automação de fluxos de trabalho." data-en="Building on this software engineering foundation, I am expanding my expertise in <strong>AI Engineering, generative AI, and AI-assisted software development</strong>, with a focus on large language models (LLMs), AI agents, prompt engineering, natural language processing (NLP), retrieval-augmented generation (RAG), information extraction, and generative AI applications. I aim to combine sound engineering practices — architecture, security, testing, maintainability, and reliability — with AI capabilities to support implementation, analysis, documentation, testing, and workflow automation.">
         Building on this software engineering foundation, I am expanding my expertise in
         <strong>AI Engineering, generative AI, and AI-assisted software development</strong>, with
         a focus on large language models (LLMs), AI agents, prompt engineering, natural language
@@ -112,126 +183,126 @@
     </section>
 
     <section>
-      <h2>Technical Skills</h2>
+      <h2 data-pt="Habilidades Técnicas" data-en="Technical Skills">Technical Skills</h2>
       <div class="skills">
-        <div class="skill-label">Backend</div><div>PHP, Laravel, Python, FastAPI, Java, REST APIs, MVC, API-first architecture</div>
-        <div class="skill-label">Security &amp; Identity</div><div>OAuth 2.0, centralized authentication, credential management, cybersecurity</div>
-        <div class="skill-label">Data &amp; Messaging</div><div>MySQL, RabbitMQ, asynchronous messaging</div>
-        <div class="skill-label">Cloud &amp; DevOps</div><div>Docker, Linux, Google Cloud, AWS, CI/CD pipelines</div>
-        <div class="skill-label">Frontend</div><div>React, JavaScript, web application development</div>
-        <div class="skill-label">AI &amp; AI-assisted development</div><div>AI-assisted software development; generative AI fundamentals; LLMs and AI agents; prompt engineering concepts; NLP; RAG; information extraction; speech AI; computer vision; generative AI applications</div>
+        <div class="skill-label" data-pt="Backend" data-en="Backend">Backend</div><div data-pt="PHP, Laravel, Python, FastAPI, Java, APIs REST, MVC, arquitetura API-first" data-en="PHP, Laravel, Python, FastAPI, Java, REST APIs, MVC, API-first architecture">PHP, Laravel, Python, FastAPI, Java, REST APIs, MVC, API-first architecture</div>
+        <div class="skill-label" data-pt="Segurança &amp; Identidade" data-en="Security &amp; Identity">Security &amp; Identity</div><div data-pt="OAuth 2.0, autenticação centralizada, gerenciamento de credenciais, cibersegurança" data-en="OAuth 2.0, centralized authentication, credential management, cybersecurity">OAuth 2.0, centralized authentication, credential management, cybersecurity</div>
+        <div class="skill-label" data-pt="Dados &amp; Mensageria" data-en="Data &amp; Messaging">Data &amp; Messaging</div><div data-pt="MySQL, RabbitMQ, mensageria assíncrona" data-en="MySQL, RabbitMQ, asynchronous messaging">MySQL, RabbitMQ, asynchronous messaging</div>
+        <div class="skill-label" data-pt="Nuvem &amp; DevOps" data-en="Cloud &amp; DevOps">Cloud &amp; DevOps</div><div data-pt="Docker, Linux, Google Cloud, AWS, pipelines de CI/CD" data-en="Docker, Linux, Google Cloud, AWS, CI/CD pipelines">Docker, Linux, Google Cloud, AWS, CI/CD pipelines</div>
+        <div class="skill-label" data-pt="Frontend" data-en="Frontend">Frontend</div><div data-pt="React, JavaScript, desenvolvimento de aplicações web" data-en="React, JavaScript, web application development">React, JavaScript, web application development</div>
+        <div class="skill-label" data-pt="IA &amp; desenvolvimento com auxílio de IA" data-en="AI &amp; AI-assisted development">AI &amp; AI-assisted development</div><div data-pt="Desenvolvimento de software com auxílio de IA; fundamentos de IA generativa; LLMs e agentes de IA; conceitos de prompt engineering; NLP; RAG; extração de informação; IA de fala; visão computacional; aplicações de IA generativa" data-en="AI-assisted software development; generative AI fundamentals; LLMs and AI agents; prompt engineering concepts; NLP; RAG; information extraction; speech AI; computer vision; generative AI applications">AI-assisted software development; generative AI fundamentals; LLMs and AI agents; prompt engineering concepts; NLP; RAG; information extraction; speech AI; computer vision; generative AI applications</div>
       </div>
     </section>
 
     <section>
-      <h2>AI Knowledge &amp; Learning Achievements</h2>
-      <p>Completed Microsoft Learn modules covering core AI concepts and practical AI solution development. These are learning achievements, not Microsoft professional certifications obtained through a certification exam.</p>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/3Z698NCH?sharingId=BABB6C820F7CA5B4">Introduction to AI Concepts</a></span><div class="tagline">AI fundamentals and core concepts.</div></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/8V93NM4W?sharingId=BABB6C820F7CA5B4">Introduction to Generative AI and Agents</a></span><div class="tagline">Generative AI foundations and AI agent concepts.</div></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/8V93N46W?sharingId=BABB6C820F7CA5B4">Introduction to Natural Language Processing (NLP)</a></span></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/8V93NJLW?sharingId=BABB6C820F7CA5B4">Introduction to AI Speech Concepts</a></span></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/K9QPD2LB?sharingId=BABB6C820F7CA5B4">Introduction to Computer Vision Concepts</a></span></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/NQ38XH2F?sharingId=BABB6C820F7CA5B4">Introduction to AI-powered Information Extraction</a></span></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/FEHWRMNX?sharingId=BABB6C820F7CA5B4">Introduction to Retrieval-Augmented Generation (RAG)</a></span><div class="tagline">Foundational concepts for grounding generative AI responses in retrieved information.</div></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/CR5G3XC9?sharingId=BABB6C820F7CA5B4">AI Concepts for Developers and Technology Professionals</a></span></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/VSAZERBM?sharingId=BABB6C820F7CA5B4">Develop a Generative AI Chat App with Microsoft Foundry</a></span><div class="tagline">Applied learning focused on a generative AI chat application.</div></div>
-      <div class="credential"><span class="credential-title"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/WMUHYFQN?sharingId=BABB6C820F7CA5B4">Plan and Prepare to Develop AI Solutions on Azure</a></span></div>
+      <h2 data-pt="Conhecimento em IA &amp; Realizações de Aprendizado" data-en="AI Knowledge &amp; Learning Achievements">AI Knowledge &amp; Learning Achievements</h2>
+      <p data-pt="Módulos concluídos no Microsoft Learn abrangendo conceitos básicos de IA e desenvolvimento prático de soluções de IA. Estas são realizações de aprendizado, não certificações profissionais Microsoft obtidas por meio de exame de certificação." data-en="Completed Microsoft Learn modules covering core AI concepts and practical AI solution development. These are learning achievements, not Microsoft professional certifications obtained through a certification exam.">Completed Microsoft Learn modules covering core AI concepts and practical AI solution development. These are learning achievements, not Microsoft professional certifications obtained through a certification exam.</p>
+      <div class="credential"><span class="credential-title" data-pt="Introdução aos Conceitos de IA" data-en="Introduction to AI Concepts"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/3Z698NCH?sharingId=BABB6C820F7CA5B4">Introduction to AI Concepts</a></span><div class="tagline" data-pt="Fundamentos e conceitos básicos de IA." data-en="AI fundamentals and core concepts.">AI fundamentals and core concepts.</div></div>
+      <div class="credential"><span class="credential-title" data-pt="Introdução à IA Generativa e Agentes" data-en="Introduction to Generative AI and Agents"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/8V93NM4W?sharingId=BABB6C820F7CA5B4">Introduction to Generative AI and Agents</a></span><div class="tagline" data-pt="Fundamentos de IA generativa e conceitos de agentes de IA." data-en="Generative AI foundations and AI agent concepts.">Generative AI foundations and AI agent concepts.</div></div>
+      <div class="credential"><span class="credential-title" data-pt="Introdução ao Processamento de Linguagem Natural (PLN)" data-en="Introduction to Natural Language Processing (NLP)"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/8V93N46W?sharingId=BABB6C820F7CA5B4">Introduction to Natural Language Processing (NLP)</a></span></div>
+      <div class="credential"><span class="credential-title" data-pt="Introdução a Conceitos de IA de Fala" data-en="Introduction to AI Speech Concepts"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/8V93NJLW?sharingId=BABB6C820F7CA5B4">Introduction to AI Speech Concepts</a></span></div>
+      <div class="credential"><span class="credential-title" data-pt="Introdução a Conceitos de Visão Computacional" data-en="Introduction to Computer Vision Concepts"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/K9QPD2LB?sharingId=BABB6C820F7CA5B4">Introduction to Computer Vision Concepts</a></span></div>
+      <div class="credential"><span class="credential-title" data-pt="Introdução à Extração de Informação com IA" data-en="Introduction to AI-powered Information Extraction"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/NQ38XH2F?sharingId=BABB6C820F7CA5B4">Introduction to AI-powered Information Extraction</a></span></div>
+      <div class="credential"><span class="credential-title" data-pt="Introdução à Geração Aumentada por Recuperação (RAG)" data-en="Introduction to Retrieval-Augmented Generation (RAG)"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/FEHWRMNX?sharingId=BABB6C820F7CA5B4">Introduction to Retrieval-Augmented Generation (RAG)</a></span><div class="tagline" data-pt="Conceitos fundamentais para fundamentar respostas de IA generativa em informações recuperadas." data-en="Foundational concepts for grounding generative AI responses in retrieved information.">Foundational concepts for grounding generative AI responses in retrieved information.</div></div>
+      <div class="credential"><span class="credential-title" data-pt="Conceitos de IA para Desenvolvedores e Profissionais de Tecnologia" data-en="AI Concepts for Developers and Technology Professionals"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/CR5G3XC9?sharingId=BABB6C820F7CA5B4">AI Concepts for Developers and Technology Professionals</a></span></div>
+      <div class="credential"><span class="credential-title" data-pt="Desenvolva um App de Chat de IA Generativa com o Microsoft Foundry" data-en="Develop a Generative AI Chat App with Microsoft Foundry"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/VSAZERBM?sharingId=BABB6C820F7CA5B4">Develop a Generative AI Chat App with Microsoft Foundry</a></span><div class="tagline" data-pt="Aprendizagem aplicada focada em um aplicativo de chat de IA generativa." data-en="Applied learning focused on a generative AI chat application.">Applied learning focused on a generative AI chat application.</div></div>
+      <div class="credential"><span class="credential-title" data-pt="Planeje e Prepare-se para Desenvolver Soluções de IA no Azure" data-en="Plan and Prepare to Develop AI Solutions on Azure"><a href="https://learn.microsoft.com/api/achievements/share/pt-br/LameckFernandes-1923/WMUHYFQN?sharingId=BABB6C820F7CA5B4">Plan and Prepare to Develop AI Solutions on Azure</a></span></div>
     </section>
 
     <section>
-      <h2>Professional Experience</h2>
+      <h2 data-pt="Experiência Profissional" data-en="Professional Experience">Professional Experience</h2>
 
       <div class="role">
-        <h3>Independent Systems Analyst &amp; Software Developer</h3>
-        <div class="meta">February 2012 – Present | Brazil</div>
-        <p>Deliver custom software solutions and technology consulting tailored to business requirements, combining systems analysis, software development, and digital infrastructure knowledge.</p>
+        <h3 data-pt="Analista de Sistemas e Desenvolvedor de Software Independente" data-en="Independent Systems Analyst &amp; Software Developer">Independent Systems Analyst &amp; Software Developer</h3>
+        <div class="meta" data-pt="Fevereiro de 2012 – Presente | Brasil" data-en="February 2012 – Present | Brazil">February 2012 – Present | Brazil</div>
+        <p data-pt="Entrega soluções de software personalizadas e consultoria tecnológica adaptadas aos requisitos de negócio, combinando análise de sistemas, desenvolvimento de software e conhecimento de infraestrutura digital." data-en="Deliver custom software solutions and technology consulting tailored to business requirements, combining systems analysis, software development, and digital infrastructure knowledge.">Deliver custom software solutions and technology consulting tailored to business requirements, combining systems analysis, software development, and digital infrastructure knowledge.</p>
         <ul>
-          <li>Analyze requirements and deliver custom software solutions from planning through implementation.</li>
-          <li>Provide cybersecurity consulting focused on network and software security.</li>
-          <li>Support ERP integration and configuration, SaaS solutions, financial modules, e-commerce integrations, and business workflow automation.</li>
-          <li>Teach programming and mentor aspiring developers.</li>
-          <li>Expand knowledge of AI-assisted software development and generative AI, exploring how AI tools can support implementation, code analysis, documentation, testing, and automation.</li>
+          <li data-pt="Analisa requisitos e entrega soluções de software personalizadas do planejamento à implementação." data-en="Analyze requirements and deliver custom software solutions from planning through implementation.">Analyze requirements and deliver custom software solutions from planning through implementation.</li>
+          <li data-pt="Fornece consultoria de cibersegurança focada em segurança de rede e de software." data-en="Provide cybersecurity consulting focused on network and software security.">Provide cybersecurity consulting focused on network and software security.</li>
+          <li data-pt="Apoia integração e configuração de ERP, soluções SaaS, módulos financeiros, integrações de e-commerce e automação de fluxos de trabalho de negócio." data-en="Support ERP integration and configuration, SaaS solutions, financial modules, e-commerce integrations, and business workflow automation.">Support ERP integration and configuration, SaaS solutions, financial modules, e-commerce integrations, and business workflow automation.</li>
+          <li data-pt="Ensina programação e orienta desenvolvedores em formação." data-en="Teach programming and mentor aspiring developers.">Teach programming and mentor aspiring developers.</li>
+          <li data-pt="Expande conhecimento de desenvolvimento de software com auxílio de IA e IA generativa, explorando como ferramentas de IA podem apoiar implementação, análise de código, documentação, testes e automação." data-en="Expand knowledge of AI-assisted software development and generative AI, exploring how AI tools can support implementation, code analysis, documentation, testing, and automation.">Expand knowledge of AI-assisted software development and generative AI, exploring how AI tools can support implementation, code analysis, documentation, testing, and automation.</li>
         </ul>
       </div>
 
       <div class="role">
-        <h3>Software Engineer — omni-electronica</h3>
-        <div class="meta">June 2019 – October 2025 | São Paulo, Brazil</div>
-        <p>Contributed to AMI-Hub, an IoT and facilities-management platform designed to monitor and manage smart-building systems.</p>
+        <h3 data-pt="Engenheiro de Software — omni-electronica" data-en="Software Engineer — omni-electronica">Software Engineer — omni-electronica</h3>
+        <div class="meta" data-pt="Junho de 2019 – Outubro de 2025 | São Paulo, Brasil" data-en="June 2019 – October 2025 | São Paulo, Brazil">June 2019 – October 2025 | São Paulo, Brazil</div>
+        <p data-pt="Contribuiu para o AMI-Hub, uma plataforma de IoT e gestão de instalações projetada para monitorar e gerenciar sistemas de edifícios inteligentes." data-en="Contributed to AMI-Hub, an IoT and facilities-management platform designed to monitor and manage smart-building systems.">Contributed to AMI-Hub, an IoT and facilities-management platform designed to monitor and manage smart-building systems.</p>
         <ul>
-          <li>Worked on the evolution of the platform across two generations, from an initial functional MVP to a distributed architecture.</li>
-          <li>Developed backend services using Laravel (PHP) and FastAPI (Python), with a React frontend and API-first architecture.</li>
-          <li>Worked with centralized authentication and credential management through AMI-Sec, using OAuth 2.0 to support authentication and redirection across platform modules.</li>
-          <li>Worked with Docker, MySQL, RabbitMQ, Linux, cloud infrastructure, and CI/CD pipelines.</li>
-          <li>Supported smart-building monitoring features, including sensor maps and dashboards for operational metrics.</li>
+          <li data-pt="Trabalhou na evolução da plataforma em duas gerações, de um MVP funcional inicial a uma arquitetura distribuída." data-en="Worked on the evolution of the platform across two generations, from an initial functional MVP to a distributed architecture.">Worked on the evolution of the platform across two generations, from an initial functional MVP to a distributed architecture.</li>
+          <li data-pt="Desenvolveu serviços de backend usando Laravel (PHP) e FastAPI (Python), com um frontend em React e arquitetura API-first." data-en="Developed backend services using Laravel (PHP) and FastAPI (Python), with a React frontend and API-first architecture.">Developed backend services using Laravel (PHP) and FastAPI (Python), with a React frontend and API-first architecture.</li>
+          <li data-pt="Trabalhou com autenticação centralizada e gerenciamento de credenciais via AMI-Sec, usando OAuth 2.0 para suportar autenticação e redirecionamento entre módulos da plataforma." data-en="Worked with centralized authentication and credential management through AMI-Sec, using OAuth 2.0 to support authentication and redirection across platform modules.">Worked with centralized authentication and credential management through AMI-Sec, using OAuth 2.0 to support authentication and redirection across platform modules.</li>
+          <li data-pt="Trabalhou com Docker, MySQL, RabbitMQ, Linux, infraestrutura de nuvem e pipelines de CI/CD." data-en="Worked with Docker, MySQL, RabbitMQ, Linux, cloud infrastructure, and CI/CD pipelines.">Worked with Docker, MySQL, RabbitMQ, Linux, cloud infrastructure, and CI/CD pipelines.</li>
+          <li data-pt="Suportou recursos de monitoramento de edifícios inteligentes, incluindo mapas de sensores e painéis de métricas operacionais." data-en="Supported smart-building monitoring features, including sensor maps and dashboards for operational metrics.">Supported smart-building monitoring features, including sensor maps and dashboards for operational metrics.</li>
         </ul>
       </div>
 
       <div class="role">
-        <h3>Developer, Web Designer &amp; Systems Analyst — Quanta Educação / Mega Ommni</h3>
-        <div class="meta">March 2013 – June 2019 | São Paulo, Brazil</div>
+        <h3 data-pt="Desenvolvedor, Web Designer &amp; Analista de Sistemas — Quanta Educação / Mega Ommni" data-en="Developer, Web Designer &amp; Systems Analyst — Quanta Educação / Mega Ommni">Developer, Web Designer &amp; Systems Analyst — Quanta Educação / Mega Ommni</h3>
+        <div class="meta" data-pt="Março de 2013 – Junho de 2019 | São Paulo, Brasil" data-en="March 2013 – June 2019 | São Paulo, Brazil">March 2013 – June 2019 | São Paulo, Brazil</div>
         <ul>
-          <li>Developed web applications using Java and later PHP with the Laravel framework and MVC architecture.</li>
-          <li>Worked with Java application environments including NetBeans, Eclipse, and Apache Tomcat.</li>
-          <li>Used Zend Framework when required and contributed to interface design and web assets.</li>
-          <li>Supported additional freelance projects alongside the main role.</li>
+          <li data-pt="Desenvolveu aplicações web usando Java e depois PHP com o framework Laravel e arquitetura MVC." data-en="Developed web applications using Java and later PHP with the Laravel framework and MVC architecture.">Developed web applications using Java and later PHP with the Laravel framework and MVC architecture.</li>
+          <li data-pt="Trabalhou com ambientes de aplicação Java incluindo NetBeans, Eclipse e Apache Tomcat." data-en="Worked with Java application environments including NetBeans, Eclipse, and Apache Tomcat.">Worked with Java application environments including NetBeans, Eclipse, and Apache Tomcat.</li>
+          <li data-pt="Usou Zend Framework quando necessário e contribuiu com design de interface e recursos web." data-en="Used Zend Framework when required and contributed to interface design and web assets.">Used Zend Framework when required and contributed to interface design and web assets.</li>
+          <li data-pt="Apoiou projetos freelancers adicionais junto à função principal." data-en="Supported additional freelance projects alongside the main role.">Supported additional freelance projects alongside the main role.</li>
         </ul>
       </div>
 
       <div class="role">
-        <h3>Earlier Experience — IT Support, Infrastructure &amp; Training</h3>
-        <div class="meta">2004 – 2011 | Brazil</div>
+        <h3 data-pt="Experiência Anterior — Suporte de TI, Infraestrutura &amp; Treinamento" data-en="Earlier Experience — IT Support, Infrastructure &amp; Training">Earlier Experience — IT Support, Infrastructure &amp; Training</h3>
+        <div class="meta" data-pt="2004 – 2011 | Brasil" data-en="2004 – 2011 | Brazil">2004 – 2011 | Brazil</div>
         <ul>
-          <li>Provided IT support, workstation and hardware maintenance, network installation, and troubleshooting.</li>
-          <li>Supported IT assets and printing infrastructure in a corporate environment.</li>
-          <li>Taught basic computer skills and supported digital learning content and web-based educational platforms.</li>
+          <li data-pt="Forneceu suporte de TI, manutenção de estações de trabalho e hardware, instalação de rede e solução de problemas." data-en="Provided IT support, workstation and hardware maintenance, network installation, and troubleshooting.">Provided IT support, workstation and hardware maintenance, network installation, and troubleshooting.</li>
+          <li data-pt="Suportou ativos de TI e infraestrutura de impressão em um ambiente corporativo." data-en="Supported IT assets and printing infrastructure in a corporate environment.">Supported IT assets and printing infrastructure in a corporate environment.</li>
+          <li data-pt="Ensinou habilidades básicas de computador e apoiou conteúdo de aprendizado digital e plataformas educacionais baseadas na web." data-en="Taught basic computer skills and supported digital learning content and web-based educational platforms.">Taught basic computer skills and supported digital learning content and web-based educational platforms.</li>
         </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="role">
-        <h3>Bachelor’s Degree in Computer Science — UNIFEG</h3>
-        <div class="meta">2009–2012</div>
-        <p><strong>Final thesis:</strong> Development of Educational Software to Support the Bilingual Literacy of Hearing-Impaired Students: Applying Human-Computer Interaction (HCI) and Computer Vision Methods.</p>
-        <p>Academic project focused on assistive educational software to support literacy in Brazilian Sign Language (Libras) and Portuguese, exploring HCI and computer vision to create an interactive learning experience centered on accessibility.</p>
-      </div>
-      <div class="role">
-        <h3>Forensic Computing — Mackenzie</h3>
-        <div class="meta">2014–2016</div>
-        <p>Studies focused on cybersecurity and technology law, information security, IT auditing, digital forensics, evidence handling, biometrics, and cyber investigations.</p>
       </div>
     </section>
 
     <section>
-      <h2>Research Funding &amp; Projects</h2>
+      <h2 data-pt="Educação" data-en="Education">Education</h2>
+      <div class="role">
+        <h3 data-pt="Bacharelado em Ciência da Computação — UNIFEG" data-en="Bachelor’s Degree in Computer Science — UNIFEG">Bachelor’s Degree in Computer Science — UNIFEG</h3>
+        <div class="meta" data-pt="2009–2012" data-en="2009–2012">2009–2012</div>
+        <p><strong data-pt="Trabalho de conclusão de curso:" data-en="Final thesis:">Final thesis:</strong> <span data-pt="Desenvolvimento de Software Educacional para Apoiar a Alfabetização Bilíngue de Estudantes com Deficiência Auditiva: Aplicando Métodos de Interação Humano-Computador (IHC) e Visão Computacional." data-en="Development of Educational Software to Support the Bilingual Literacy of Hearing-Impaired Students: Applying Human-Computer Interaction (HCI) and Computer Vision Methods.">Development of Educational Software to Support the Bilingual Literacy of Hearing-Impaired Students: Applying Human-Computer Interaction (HCI) and Computer Vision Methods.</span></p>
+        <p data-pt="Projeto acadêmico focado em software educacional assistivo para apoiar a alfabetização em Língua Brasileira de Sinais (Libras) e Português, explorando IHC e visão computacional para criar uma experiência de aprendizado interativa centrada na acessibilidade." data-en="Academic project focused on assistive educational software to support literacy in Brazilian Sign Language (Libras) and Portuguese, exploring HCI and computer vision to create an interactive learning experience centered on accessibility.">Academic project focused on assistive educational software to support literacy in Brazilian Sign Language (Libras) and Portuguese, exploring HCI and computer vision to create an interactive learning experience centered on accessibility.</p>
+      </div>
+      <div class="role">
+        <h3 data-pt="Computação Forense — Mackenzie" data-en="Forensic Computing — Mackenzie">Forensic Computing — Mackenzie</h3>
+        <div class="meta" data-pt="2014–2016" data-en="2014–2016">2014–2016</div>
+        <p data-pt="Estudos focados em cibersegurança e direito da tecnologia, segurança da informação, auditoria de TI, forense digital, manuseio de evidências, biométrica e investigações cibernéticas." data-en="Studies focused on cybersecurity and technology law, information security, IT auditing, digital forensics, evidence handling, biometrics, and cyber investigations.">Studies focused on cybersecurity and technology law, information security, IT auditing, digital forensics, evidence handling, biometrics, and cyber investigations.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-pt="Fomento à Pesquisa &amp; Projetos" data-en="Research Funding &amp; Projects">Research Funding &amp; Projects</h2>
       <div class="credential">
         <span class="credential-title">
           <a href="https://bv.fapesp.br/pt/bolsas/186421/projeto-piscari-plataforma-de-dispositivos-ble-para-recomendacao-metricas-e-publicidade/">
-            Projeto PISCARI: plataforma de dispositivos BLE para recomendação, métricas e publicidade
+            <span data-pt="Projeto PISCARI: plataforma de dispositivos BLE para recomendação, métricas e publicidade" data-en="Projeto PISCARI: plataforma de dispositivos BLE para recomendação, métricas e publicidade">Projeto PISCARI: plataforma de dispositivos BLE para recomendação, métricas e publicidade</span>
           </a>
         </span>
-        <div class="tagline">FAPESP — Fundação de Amparo à Pesquisa do Estado de São Paulo. Project/award record listed in the FAPESP Virtual Library.</div>
+        <div class="tagline" data-pt="FAPESP — Fundação de Amparo à Pesquisa do Estado de São Paulo. Registro de projeto/prêmio listado na Biblioteca Virtual da FAPESP." data-en="FAPESP — Fundação de Amparo à Pesquisa do Estado de São Paulo. Project/award record listed in the FAPESP Virtual Library.">FAPESP — Fundação de Amparo à Pesquisa do Estado de São Paulo. Project/award record listed in the FAPESP Virtual Library.</div>
       </div>
     </section>
 
     <section>
-      <h2>Publications</h2>
+      <h2 data-pt="Publicações" data-en="Publications">Publications</h2>
       <div class="credential">
-        <span class="credential-title">Development of a Progressive Web Application for Coffee Leaf Condition Identification Using Artificial Intelligence</span>
+        <span class="credential-title" data-pt="Desenvolvimento de um PWA para Identificação de Condições de Folhas de Café Usando Inteligência Artificial" data-en="Development of a Progressive Web Application for Coffee Leaf Condition Identification Using Artificial Intelligence">Development of a Progressive Web Application for Coffee Leaf Condition Identification Using Artificial Intelligence</span>
         <div class="tagline">Preprint — DOI: <a href="https://doi.org/10.5281/zenodo.23480207">10.5281/zenodo.23480207</a></div>
       </div>
       <div class="credential">
-        <span class="credential-title">Deep Learning Applied to COVID-19 Detection in Chest X-Rays: A Transfer Learning Approach</span>
+        <span class="credential-title" data-pt="Aprendizado Profundo Aplicado à Detecção de COVID-19 em Raios-X de Tórax: Uma Abordagem de Transfer Learning" data-en="Deep Learning Applied to COVID-19 Detection in Chest X-Rays: A Transfer Learning Approach">Deep Learning Applied to COVID-19 Detection in Chest X-Rays: A Transfer Learning Approach</span>
         <div class="tagline">Preprint — DOI: <a href="https://doi.org/10.5281/zenodo.23504469">10.5281/zenodo.23504469</a></div>
       </div>
     </section>
 
     <section>
-      <h2>Languages</h2>
+      <h2 data-pt="Idiomas" data-en="Languages">Languages</h2>
       <div class="lang">
-        <span class="lang-item">
+        <span class="lang-item" data-pt="Português — Nativo" data-en="Portuguese — Native">
           <svg class="flag" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Brazil flag">
             <rect width="20" height="14" fill="#009B3A"/>
             <polygon points="10,1.4 18.6,7 10,12.6 1.4,7" fill="#FEDD00"/>
@@ -240,7 +311,7 @@
           </svg>
           Portuguese — Native
         </span>
-        <span class="lang-item">
+        <span class="lang-item" data-pt="Inglês — Elementar" data-en="English — Elementary">
           <svg class="flag" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="United States flag">
             <rect width="20" height="14" fill="#B22234"/>
             <g fill="#fff">
@@ -266,5 +337,45 @@
     </section>
 
   </main>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'resume-lang';
+
+      function setLang(lang) {
+        // atributo lang do html (útil para leitores de tela e hifenização)
+        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+        // traduz todos os elementos com data-pt / data-en, exceto <title> e <meta>
+        document.querySelectorAll('[data-pt]').forEach(function (el) {
+          if (el.tagName === 'META' || el.tagName === 'TITLE') return;
+          el.innerHTML = el.dataset[lang];
+        });
+
+        // <title>
+        var title = document.getElementById('page-title');
+        if (title) document.title = title.dataset[lang];
+
+        // <meta description>
+        var meta = document.getElementById('meta-desc');
+        if (meta) meta.content = meta.dataset[lang];
+
+        // marca o radio selecionado sem disparar onchange
+        var radio = document.getElementById('lang-' + lang);
+        if (radio) radio.checked = true;
+
+        // lembra a escolha
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      }
+
+      // expõe globalmente para o atributo onchange do HTML
+      window.setLang = setLang;
+
+      // inicia com o idioma salvo ou português por padrão
+      var saved = null;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      setLang(saved || 'pt');
+    })();
+  </script>
 </body>
 </html>
